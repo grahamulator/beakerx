@@ -6,4 +6,5 @@ for file in $files
 do
   unzip ~/data/${file}.zip -d ~/data/
   sqlite3 lodes.db < ~/data/${file}
+  rm ~/data/${file}
 done

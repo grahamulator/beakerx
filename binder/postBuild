@@ -3,3 +3,6 @@
 #sqlite3 test.db
 
 echo "The postbuild worked" > testfile.txt
+
+unzip ~/data/ca_wac_2015.sql.zip -d ~/data/
+sqlite3 test.db < ~/data/ca_wac_2015.sql

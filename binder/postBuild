@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#sqlite3 test.db
+files='ca_wac_2015.sql ca_rac_2015.sql ca_od_2015.sql ca_xwalk.sql mo_xwalk.sql'
 
-echo "The postbuild worked" > testfile.txt
-
-unzip ~/data/ca_wac_2015.sql.zip -d ~/data/
-sqlite3 test.db < ~/data/ca_wac_2015.sql
+for file in $files
+do
+  unzip ~/data/${file}.zip -d ~/data/
+  sqlite3 lodes.db < ~/data/${file}
+done
